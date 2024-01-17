@@ -14,7 +14,7 @@ def generate_sentiment_score(new_data):
     size = len(new_data)
     print(f"Received {size} data")
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M")
-    result_path_path = f"temp_scores/scores_{timestamp}.txt"
+    result_path_path = f"temp_scores/scores_{timestamp}.txt" # a file to keep track of all ratings in case the connection broke unexpectedly
     with open(result_path_path, 'w') as file:
             
         print("----------- Request Sentiment Score from ChatGPT Starts -------------")
@@ -67,9 +67,9 @@ def backtest(testing_file_path):
     with open(result_file_path) as my_file:
         for line in my_file:
             sentiment_scores.append(line)
-    data['Score_by_ChatGPT'] = sentiment_scores
+    data['Score_by_ChatGPT'] = sentiment_scores # Create a new column for the prediction result
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M")
-    result_file_path = f'chatGPT_model/results/final_scores/sentiment_scores_by_ChatGPT_{timestamp}.xlsx'
+    result_file_path = f'final_scores/sentiment_scores_by_ChatGPT_{timestamp}.xlsx'
     data.to_excel(result_file_path)
     print(f"data successfully written to {result_file_path}")
 
