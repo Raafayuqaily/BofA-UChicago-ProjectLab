@@ -13,11 +13,7 @@ def train(my_api_key, file_id):
 if __name__ == "__main__":
     local = False
     if local:
-        my_api_key = "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"
-        # file_id = "file-3KSl05aDNHfyLZCvvifizWvG"
-        # file_id = "file-jjDF2ZnSi5q90eXuyiWImAdu"
-        file_id = "file-ozSBt2Fqp2PNVUegbDTLZom2"
-
+        my_api_key = "YOUR_SECRET_KEY"
     else:
         my_api_key = sys.argv[1]
         file_id = sys.argv[2]
