@@ -8,6 +8,8 @@ import re
 from tqdm import tqdm
 import datetime
 
+x = 5.5
+
 def generate_sentiment_score(new_data):
 
     url = f'http://localhost:8443/chat'
